@@ -16,14 +16,14 @@ public class PixelsFabricUtillites implements ModInitializer {
 	public void onInitialize() {
 		System.out.println("(Pixel's Fabric Utillites) Initializing");
 		
-		/*RenderLivingCallback.EVENT.register((livingEntity, f, g, matrixStack, vertexConsumerProvider, i) -> {
+		RenderLivingCallback.EVENT.register((livingEntity, f, g, matrixStack, vertexConsumerProvider, i) -> {
 			livingEntity.addVelocity(0, 10, 0);
 		 
 		    return ActionResult.PASS;
-		});*/
+		});
 	}
 	
-	public class RenderLiving implements RenderLivingCallback {
+	/*public class RenderLiving implements RenderLivingCallback {
 
 		@Override
 		public ActionResult render(LivingEntity livingEntity, float f, float g, MatrixStack matrixStack,
@@ -32,6 +32,6 @@ public class PixelsFabricUtillites implements ModInitializer {
 			return ActionResult.PASS;
 		}
 		
-	}
+	}*/
 
 }

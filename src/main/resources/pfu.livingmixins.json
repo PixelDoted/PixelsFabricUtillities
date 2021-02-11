@@ -1,12 +1,12 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "me.pixeldots.pixelsfabricutillites.mixins.living",
+  "package": "me.pixeldots.pixelsfabricutillites.events.living.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-  	"RenderLivingMixin"
   ],
   "client": [
+  	"RenderLivingMixin"
   ],
   "injectors": {
     "defaultRequire": 1
