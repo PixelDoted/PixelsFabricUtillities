@@ -1,13 +1,8 @@
 package me.pixeldots.pixelsfabricutillites;
 
+import me.pixeldots.pixelsfabricutillites.Handlers.KeyBindings;
 import me.pixeldots.pixelsfabricutillites.events.living.RenderLivingCallback;
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.client.render.VertexConsumerProvider;
-import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.entity.ItemEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.util.ActionResult;
 
 public class PixelsFabricUtillites implements ModInitializer {
@@ -16,22 +11,11 @@ public class PixelsFabricUtillites implements ModInitializer {
 	public void onInitialize() {
 		System.out.println("(Pixel's Fabric Utillites) Initializing");
 		
-		RenderLivingCallback.EVENT.register((livingEntity, f, g, matrixStack, vertexConsumerProvider, i) -> {
-			livingEntity.addVelocity(0, 10, 0);
-		 
+		RenderLivingCallback.EVENT.register((ClientPlayerEntity, yaw, tickDelta, matrixStack, vertexConsumerProvider, light) -> {
+			matrixStack.scale(2, 2, 2);
 		    return ActionResult.PASS;
 		});
+		KeyBindings.registerKeyBindings();
 	}
-	
-	/*public class RenderLiving implements RenderLivingCallback {
-
-		@Override
-		public ActionResult render(LivingEntity livingEntity, float f, float g, MatrixStack matrixStack,
-				VertexConsumerProvider vertexConsumerProvider, int i) {
-			livingEntity.addVelocity(0, 10, 0);
-			return ActionResult.PASS;
-		}
-		
-	}*/
 
 }
